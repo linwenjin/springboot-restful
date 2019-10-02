@@ -1,6 +1,6 @@
 演示地址：http://vue.linwenjin.top
 
-# springboot+maven+restful+JWT
+# IDEA+springboot+maven+restful+JWT
 ###### 后续慢慢完善，最近需要考试，所以没有那么多精力。
 ###### 和刚入门java的朋友一起学习，不断完善。
 ###### 由于php是本人的第一语言，代码里能看到php的影子，目录结构主要分成几个部分，如下：
