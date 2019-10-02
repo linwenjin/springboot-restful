@@ -1,4 +1,5 @@
-演示地址：http://vue.linwenjin.top
+前端演示地址：http://vue.linwenjin.top
+<br />前端代码：https://github.com/linwenjin/vueadmin
 
 # IDEA+springboot+maven+restful+JWT
 ###### 后续慢慢完善，最近需要考试，所以没有那么多精力。
