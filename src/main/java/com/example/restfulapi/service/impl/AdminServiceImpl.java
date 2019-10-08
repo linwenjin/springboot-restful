@@ -1,4 +1,4 @@
-package com.example.restfulapi.impl;
+package com.example.restfulapi.service.impl;
 
 import com.example.restfulapi.bean.Admin;
 import com.example.restfulapi.bean.ResponseCodeEnum;
@@ -6,7 +6,6 @@ import com.example.restfulapi.controller.common.CommonController;
 import com.example.restfulapi.dao.AdminDao;
 import com.example.restfulapi.middleware.BaseException;
 import com.example.restfulapi.service.AdminService;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 

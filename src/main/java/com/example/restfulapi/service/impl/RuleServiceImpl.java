@@ -1,4 +1,4 @@
-package com.example.restfulapi.impl;
+package com.example.restfulapi.service.impl;
 
 import com.example.restfulapi.bean.Rule;
 import com.example.restfulapi.bean.ResponseCodeEnum;
