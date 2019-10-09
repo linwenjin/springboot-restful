@@ -12,7 +12,6 @@
 <br />&emsp;&emsp;&emsp;├ bean           ***&emsp;-- 各类数据对象***
 <br />&emsp;&emsp;&emsp;├ controller     ***&emsp;-- 控制器***
 <br />&emsp;&emsp;&emsp;├ dao            ***&emsp;-- 数据连接对象目录***
-<br />&emsp;&emsp;&emsp;├ impl           ***&emsp;-- 服务实现目录***
 <br />&emsp;&emsp;&emsp;├ middleware     ***&emsp;-- 各种中间件***
 <br />&emsp;&emsp;&emsp;&emsp;├ AuthenticationInterceptor      ***&emsp;&emsp;---- 内重写preHandle，请求发起前首先会经过这里***
 <br />&emsp;&emsp;&emsp;&emsp;├ BaseException                  ***&emsp;&emsp;---- 抛出类，用来抛出各种自定义错误***
@@ -20,6 +19,7 @@
 <br />&emsp;&emsp;&emsp;&emsp;├ RestResultWrapper              ***&emsp;&emsp;---- 定义接口返回的代码格式***
 <br />&emsp;&emsp;&emsp;&emsp;└ WebConfigurer                  ***&emsp;&emsp;---- 静态资源映射，注册拦截器AuthenticationInterceptor***
 <br />&emsp;&emsp;&emsp;└ service                        ***&emsp;-- 服务层目录***
+<br />&emsp;&emsp;&emsp;&emsp;└ impl           ***&emsp;-- 服务实现目录***
 <br />&emsp;└ resources
 <br />&emsp;&emsp;└ application.yml                  ***&emsp;-- 配置文件***
 
