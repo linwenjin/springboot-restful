@@ -15,6 +15,7 @@
 <br />&emsp;&emsp;&emsp;├ middleware     ***&emsp;-- 各种中间件***
 <br />&emsp;&emsp;&emsp;&emsp;├ AuthenticationInterceptor      ***&emsp;&emsp;---- 内重写preHandle，请求发起前首先会经过这里***
 <br />&emsp;&emsp;&emsp;&emsp;├ BaseException                  ***&emsp;&emsp;---- 抛出类，用来抛出各种自定义错误***
+<br />&emsp;&emsp;&emsp;&emsp;├ CustomMultiThreadingConfig                  ***&emsp;&emsp;---- 自定义多线程***
 <br />&emsp;&emsp;&emsp;&emsp;├ GlobalExceptionHandler         ***&emsp;&emsp;---- 拦截context-path下所有错误，并制定格式返回***
 <br />&emsp;&emsp;&emsp;&emsp;├ RestResultWrapper              ***&emsp;&emsp;---- 定义接口返回的代码格式***
 <br />&emsp;&emsp;&emsp;&emsp;└ WebConfigurer                  ***&emsp;&emsp;---- 静态资源映射，注册拦截器AuthenticationInterceptor***
