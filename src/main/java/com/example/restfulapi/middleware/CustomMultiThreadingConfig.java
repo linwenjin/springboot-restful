@@ -58,8 +58,8 @@ public class CustomMultiThreadingConfig implements AsyncConfigurer {
             ThreadPoolTaskExecutor threadTask = (ThreadPoolTaskExecutor) thread;
             ThreadPoolExecutor threadPoolExecutor =threadTask.getThreadPoolExecutor();
 
-            map.put("总线程1",threadPoolExecutor.getPoolSize());
-            map.put("总线程2",threadPoolExecutor.getCorePoolSize());
+            map.put("总线程",threadPoolExecutor.getPoolSize());
+            map.put("线程的核心数",threadPoolExecutor.getCorePoolSize());
             map.put("当前有多少线程正在处理任务",threadPoolExecutor.getActiveCount());
             map.put("还剩多少个任务未执行",threadPoolExecutor.getQueue().size());
             map.put("当前可用队列长度",threadPoolExecutor.getQueue().remainingCapacity());
