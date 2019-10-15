@@ -1,6 +1,6 @@
 package com.example.restfulapi.controller.system;
 
-import com.example.restfulapi.bean.Admin;
+import com.example.restfulapi.bean.ge.Admin;
 import com.example.restfulapi.bean.ResponseCodeEnum;
 import com.example.restfulapi.middleware.BaseException;
 import com.example.restfulapi.service.AdminService;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,10 +48,15 @@ public class AdminController {
 
 //        System.out.println("开始更新...");
 //        // 判断用户是否存在,还需判断取到的id是否为传过来的id
-//        int findUserId = thisService.findByUsername(thisBean.getUsername()).getId();
+//        List<Admin> userInfoList = thisService.findByUsername(thisBean.getUsername());
+//        if(userInfoList.size() == 0 || userInfoList == null) {
+//            throw BaseException.out(ResponseCodeEnum.ADMIN_USER_NOT_EXIST,null);
+//        }
+//        int findUserId = userInfoList.get(0).getId();
 //        if(findUserId != thisBean.getId()) {
 //            throw BaseException.out(ResponseCodeEnum.ADMIN_USER_EXIST, null);
 //        }
+//
 //        return thisService.edit(thisBean);
     }
 
@@ -85,7 +91,7 @@ public class AdminController {
         System.out.println("开始查询响应数据...");
         Map res = new HashMap();
         res.put("total", thisService.getTotal(name));
-        res.put("list", thisService.findAll(page, name));
+        res.put("list", thisService.findAll(page, 10, name));
 
         return res;
     }

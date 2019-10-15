@@ -1,6 +1,7 @@
 package com.example.restfulapi.service;
 
-import com.example.restfulapi.bean.Admin;
+
+import com.example.restfulapi.bean.ge.Admin;
 
 import java.util.List;
 
@@ -50,7 +51,7 @@ public interface AdminService {
      * @param username
      * @return
      */
-    Admin findByUsername(String username);
+    List<Admin> findByUsername(String username);
 
     /**
      * 更新登陆时间
@@ -63,7 +64,7 @@ public interface AdminService {
      * 查询所有
      * @return
      */
-    List<Admin> findAll(int page, String name);
+    List<Admin> findAll(int page, int size, String name);
 
     /**
      * 查询总数

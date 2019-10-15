@@ -36,6 +36,13 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
+        if(request.getServletPath().equals("/system/login")) {
+            // 记录来访者ip
+            String ip = CommonController.getIp(request);
+//            CommonController.fileWrite("E:/upload/ip.txt", ip);
+            CommonController.fileWrite("/www/wwwroot/java/upload/ip.txt", ip);
+        }
+
 
         // 解决preHandle下的跨域问题
         String[] whiteOrigin = allowOrigin.split(",");

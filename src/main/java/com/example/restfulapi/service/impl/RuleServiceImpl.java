@@ -1,8 +1,9 @@
 package com.example.restfulapi.service.impl;
 
-import com.example.restfulapi.bean.Rule;
+import com.example.restfulapi.bean.ge.Rule;
 import com.example.restfulapi.bean.ResponseCodeEnum;
-import com.example.restfulapi.dao.RuleDao;
+import com.example.restfulapi.bean.ge.RuleExample;
+import com.example.restfulapi.dao.RuleMapper;
 import com.example.restfulapi.middleware.BaseException;
 import com.example.restfulapi.service.RuleService;
 import org.springframework.stereotype.Service;
@@ -20,14 +21,14 @@ import java.util.Map;
 @Service
 public class RuleServiceImpl implements RuleService {
     @Resource
-    private RuleDao thisDao;
+    private RuleMapper thisDao;
 
     @Override
     public boolean add(Rule thisBean) {
         boolean flag = false;
         try{
 
-            thisDao.add(thisBean);
+            thisDao.insertSelective(thisBean);
             flag=true;
         }catch(Exception e){
             throw BaseException.out(ResponseCodeEnum.SAVE_FAIL, e);
@@ -40,7 +41,7 @@ public class RuleServiceImpl implements RuleService {
     public boolean edit(Rule thisBean) {
         boolean flag = false;
         try{
-            thisDao.edit(thisBean);
+            thisDao.updateByPrimaryKey(thisBean);
             flag=true;
         }catch(Exception e){
             throw BaseException.out(ResponseCodeEnum.SAVE_FAIL, e);
@@ -54,7 +55,7 @@ public class RuleServiceImpl implements RuleService {
     public boolean delete(int id) {
         boolean flag=false;
         try{
-            thisDao.delete(id);
+            thisDao.deleteByPrimaryKey(id);
             flag=true;
         }catch(Exception e){
             e.printStackTrace();
@@ -64,12 +65,14 @@ public class RuleServiceImpl implements RuleService {
 
     @Override
     public Rule findById(int id) {
-        return thisDao.findById(id);
+        return thisDao.selectByPrimaryKey(id);
     }
 
     @Override
     public Map findAll() {
-        List<Rule> rules = thisDao.findAll();
+        RuleExample example = new RuleExample();
+
+        List<Rule> rules = thisDao.selectByExample(example);
         List fatherRuleList = new ArrayList();
 
 
@@ -88,9 +91,9 @@ public class RuleServiceImpl implements RuleService {
                                 put("icon", rr.getIcon());
                                 put("component", rr.getComponent());
                                 put("name", rr.getName());
-                                put("is_leaf", rr.getIs_leaf());
-                                put("is_show", rr.getIs_show());
-                                put("order", rr.getOrder());
+                                put("is_leaf", rr.getIsLeaf());
+                                put("is_show", rr.getIsShow());
+                                put("order", rr.getSort());
                                 put("state", rr.getState());
                             }
                         };
@@ -105,9 +108,9 @@ public class RuleServiceImpl implements RuleService {
                         put("component", r.getComponent());
                         put("name", r.getName());
                         put("icon", r.getIcon());
-                        put("is_leaf", r.getIs_leaf());
-                        put("is_show", r.getIs_show());
-                        put("order", r.getOrder());
+                        put("is_leaf", r.getIsLeaf());
+                        put("is_show", r.getIsShow());
+                        put("order", r.getSort());
                         put("state", r.getState());
                         put("children", temp);
                     }

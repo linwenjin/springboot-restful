@@ -20,19 +20,19 @@ public class CustomMultiThreadingController {
 
     @ResponseBody
     @RequestMapping(value="/dotask")
-    public String doTask() {
-        for (int i=0;i<10000;i++){
-            customMultiThreadingService.executeAysncTask1(i);
-            customMultiThreadingService.executeAsyncTask2(i);
+    public Object doTask() {
+        for (int i=0;i<100;i++){
+            customMultiThreadingService.tesTask(i);
+            customMultiThreadingService.stringTask("abc");
         }
 
-        return "success";
+        return 1;
     }
 
-    @RequestMapping(value="/test")
-    public Map test() {
-
-        CustomMultiThreadingConfig e = new CustomMultiThreadingConfig();
-        return e.getThreadingInfo();
-    }
+//    @RequestMapping(value="/test")
+//    public Map test() {
+//
+//        CustomMultiThreadingConfig e = new CustomMultiThreadingConfig();
+//        return e.getThreadingInfo();
+//    }
 }

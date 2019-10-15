@@ -26,23 +26,6 @@ public class CommonController {
     }
 
     /**
-     * 获取日期，默认格式yyyy-MM-dd HH:mm:ss
-     * @param format
-     * @return
-     */
-    public static String getStrTimeFormat(String format) {
-        if(format == null || format.equals("")) {
-            format = "yyyy-MM-dd HH:mm:ss";
-        }
-
-        SimpleDateFormat formatter = new SimpleDateFormat(format);
-        Date date = new Date();
-
-        return formatter.format(date);
-    }
-
-
-    /**
      * 获取用户真实IP地址，不使用request.getRemoteAddr();的原因是有可能用户使用了代理软件方式避免真实IP地址,
      *
      * 可是，如果通过了多级反向代理的话，X-Forwarded-For的值并不止一个，而是一串IP值，究竟哪个才是真正的用户端的真实IP呢？
@@ -78,21 +61,18 @@ public class CommonController {
 
     /**
      * 追加写入文件
-     * @param filePath
-     * @param fileName
+     * @param filePathName
      * @param text
      */
-    public static void fileWrite(String filePath, String fileName, String text) {
+    public static void fileWrite(String filePathName, String text) {
         Date date = new Date();
         String dateStr = date.toString();
 
         FileWriter fw = null;
         try {
         //如果文件存在，则追加内容；如果文件不存在，则创建文件
-            File path = new File(filePath);
-            System.out.println(path.exists());
-            if(path.exists()) {
-                File f = new File(filePath+"/"+fileName);
+            File f = new File(filePathName);
+            if(f.exists()) {
                 fw = new FileWriter(f, true);
 
                 PrintWriter pw = new PrintWriter(fw);

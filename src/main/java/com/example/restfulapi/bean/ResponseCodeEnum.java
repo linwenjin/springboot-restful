@@ -17,6 +17,7 @@ public enum ResponseCodeEnum {
     // Admin
 
     ADMIN_USER_EXIST(2001, "重复的用户名"),
+    ADMIN_USER_NOT_EXIST(2001, "用户不存在"),
 
     GET_USER_INFO_FAILED(2002, "保存用户信息失败"),
 

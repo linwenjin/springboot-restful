@@ -1,8 +1,7 @@
 package com.example.restfulapi.service;
 
-import com.example.restfulapi.bean.Rule;
+import com.example.restfulapi.bean.ge.Rule;
 
-import java.util.List;
 import java.util.Map;
 
 /**

@@ -1,7 +1,7 @@
 package com.example.restfulapi.controller.system;
 
 import com.example.restfulapi.bean.ResponseCodeEnum;
-import com.example.restfulapi.bean.Rule;
+import com.example.restfulapi.bean.ge.Rule;
 import com.example.restfulapi.middleware.BaseException;
 import com.example.restfulapi.service.RuleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +46,7 @@ public class RuleController {
     public boolean delete(@PathVariable int id) {
         throw BaseException.out(ResponseCodeEnum.DO_NOT_EDIT, null);
 
-//        System.out.println("开始删除...");
+//        System.out.println("开始删除..."); renmiren
 //        return thisService.delete(id);
     }
 
