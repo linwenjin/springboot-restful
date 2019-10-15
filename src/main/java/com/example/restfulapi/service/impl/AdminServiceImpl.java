@@ -3,10 +3,10 @@ package com.example.restfulapi.service.impl;
 import com.example.restfulapi.bean.ge.Admin;
 import com.example.restfulapi.bean.ResponseCodeEnum;
 import com.example.restfulapi.bean.ge.AdminExample;
-import com.example.restfulapi.controller.common.CommonController;
 import com.example.restfulapi.dao.AdminMapper;
 import com.example.restfulapi.middleware.BaseException;
 import com.example.restfulapi.service.AdminService;
+import com.example.restfulapi.until.Common;
 import com.example.restfulapi.until.VeDate;
 import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class AdminServiceImpl implements AdminService {
         boolean flag = false;
         try{
             // 盐
-            String salt = CommonController.getRandomString(5);
+            String salt = Common.getRandomString(5);
             // 密码
             String pwd = thisBean.getPassword();
             thisBean.setSalt(salt);
@@ -80,7 +80,7 @@ public class AdminServiceImpl implements AdminService {
         boolean flag = false;
         try{
             // 盐
-            String salt = CommonController.getRandomString(5);
+            String salt = Common.getRandomString(5);
             // 密码加密 <md5(明文密码 + / + 盐)>
             String pwd = DigestUtils.md5DigestAsHex((password+"/"+salt).getBytes());
 

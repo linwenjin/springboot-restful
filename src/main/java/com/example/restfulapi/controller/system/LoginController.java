@@ -2,9 +2,9 @@ package com.example.restfulapi.controller.system;
 
 import com.example.restfulapi.bean.ge.Admin;
 import com.example.restfulapi.bean.ResponseCodeEnum;
-import com.example.restfulapi.controller.common.JwtController;
 import com.example.restfulapi.middleware.BaseException;
 import com.example.restfulapi.service.AdminService;
+import com.example.restfulapi.until.Jwt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,6 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/system")
-//@CrossOrigin(origins = "http://localhost:8080")
 public class LoginController {
 
     @Autowired
@@ -56,7 +55,7 @@ public class LoginController {
         Map<String, ?> res = new HashMap() {
             {
                 put("user", user);
-                put("token", JwtController.getJwtToken(username));
+                put("token", Jwt.getJwtToken(username));
             }
         };
 

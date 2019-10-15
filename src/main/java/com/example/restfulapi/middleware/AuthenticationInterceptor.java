@@ -1,9 +1,9 @@
 package com.example.restfulapi.middleware;
 
 import com.example.restfulapi.bean.ResponseCodeEnum;
-import com.example.restfulapi.controller.common.CommonController;
-import com.example.restfulapi.controller.common.JwtController;
-import org.springframework.http.HttpHeaders;
+import com.example.restfulapi.until.Common;
+import com.example.restfulapi.until.File;
+import com.example.restfulapi.until.Jwt;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -38,9 +38,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
         if(request.getServletPath().equals("/system/login")) {
             // 记录来访者ip
-            String ip = CommonController.getIp(request);
-//            CommonController.fileWrite("E:/upload/ip.txt", ip);
-            CommonController.fileWrite("/www/wwwroot/java/upload/ip.txt", ip);
+            String ip = Common.getIp(request);
+//            File.fileWrite("E:/upload/ip.txt", ip);
+            File.fileWrite("/www/wwwroot/java/upload/ip.txt", ip);
         }
 
 
@@ -88,7 +88,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             throw BaseException.out(ResponseCodeEnum.ILLEGAL_LOGIN, "token is not found");
         }
         // 获取username
-        String username = JwtController.JwtTokenVerify(token);
+        String username = Jwt.JwtTokenVerify(token);
         // 权限判断
 
 
