@@ -31,7 +31,8 @@
 
 ## 项目打开方式：
   1. 打开mysql服务，配置好mysql。
-  2. 点击Reimport All Maven Projects，安装好各种java类
-  3. 直接编译，springboot已经内置tomcat环境
-  4. 调起一个接口试试：http://localhost:8081/api/system/rule
-  5. 注：图片地址我是映射的，映射的地址有另外指向一个域名
+  1. 安装好idea lombok插件
+  1. 点击Reimport All Maven Projects，安装好各种java类
+  1. 直接编译，springboot已经内置tomcat环境
+  1. 调起一个接口试试：http://localhost:8081/api/system/rule
+  1. 注：图片地址我是映射的，映射的地址有另外指向一个域名
