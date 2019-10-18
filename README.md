@@ -22,11 +22,13 @@
 <br />&emsp;&emsp;&emsp;&emsp;└ WebConfigurer                  ***&emsp;&emsp;---- 静态资源映射，注册拦截器AuthenticationInterceptor***
 <br />&emsp;&emsp;&emsp;├ service                        ***&emsp;-- 服务层目录***
 <br />&emsp;&emsp;&emsp;&emsp;└ impl           ***&emsp;-- 服务实现目录***
-<br />&emsp;&emsp;&emsp;└ until                        ***&emsp;-- 自定义工具类***
+<br />&emsp;&emsp;&emsp;├ until                        ***&emsp;-- 自定义工具类***
+<br />&emsp;&emsp;&emsp;└ websocket                        ***&emsp;-- websocket相关***
 <br />&emsp;└ resources
 <br />&emsp;&emsp;├ generator            ***&emsp;-- mybatis generator自动生成工具***
 <br />&emsp;&emsp;├ mapping            ***&emsp;-- mybatis xml文件***
-<br />&emsp;&emsp;└ application.yml                  ***&emsp;-- 配置文件***
+<br />&emsp;&emsp;├ application.yml                  ***&emsp;-- 配置文件***
+<br />&emsp;&emsp;└ logback-spring.xml                  ***&emsp;-- Logger配置文件***
 
 
 ## 项目打开方式：
