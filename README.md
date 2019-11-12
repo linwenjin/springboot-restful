@@ -23,7 +23,8 @@
 <br />&emsp;&emsp;&emsp;├ service                        ***&emsp;-- 服务层目录***
 <br />&emsp;&emsp;&emsp;&emsp;└ impl           ***&emsp;-- 服务实现目录***
 <br />&emsp;&emsp;&emsp;├ until                        ***&emsp;-- 自定义工具类***
-<br />&emsp;&emsp;&emsp;└ websocket                        ***&emsp;-- websocket相关***
+<br />&emsp;&emsp;&emsp;├ websocket                        ***&emsp;-- websocket相关***
+<br />&emsp;&emsp;&emsp;└ elasticsearch            ***&emsp;-- elasticseach http api操作，需要先安装好es服务***
 <br />&emsp;└ resources
 <br />&emsp;&emsp;├ generator            ***&emsp;-- mybatis generator自动生成工具***
 <br />&emsp;&emsp;├ mapping            ***&emsp;-- mybatis xml文件***
