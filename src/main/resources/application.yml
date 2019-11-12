@@ -69,3 +69,7 @@ pre-read:
   ignorePath: /aaa
   # 允许访问的路径
   allowOrigin: http://vue.linwenjin.top,http://localhost:8080
+
+# es相关
+es:
+  url: http://localhost:9200
